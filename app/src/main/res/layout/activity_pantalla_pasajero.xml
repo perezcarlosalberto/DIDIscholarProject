@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        tools:context=".PantallaPasajero">
+
+    <LinearLayout
+            android:id="@+id/layoutFormularioDestino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingresa tu destino"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="20dp"/>
+
+        <EditText
+                android:id="@+id/etDestinoCalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Calle"
+                android:inputType="textPostalAddress"
+                android:textColor="#333333"
+                android:minHeight="48dp" />
+
+        <EditText
+                android:id="@+id/etDestinoNumero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Número (Solo dígitos, Opcional)"
+                android:inputType="number"
+                android:textColor="#333333"
+                android:minHeight="48dp" />
+
+        <EditText
+                android:id="@+id/etDestinoColonia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Colonia"
+                android:textColor="#333333"
+                android:minHeight="48dp" />
+
+        <EditText
+                android:id="@+id/etDestinoCiudad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ciudad Madero"
+                android:enabled="false"
+                android:textColor="#333333"
+                android:minHeight="48dp" />
+
+        <EditText
+                android:id="@+id/etDestinoEstado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tamaulipas"
+                android:enabled="false"
+                android:textColor="#333333"
+                android:minHeight="48dp" />
+
+        <EditText
+                android:id="@+id/etDestinoCP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Código Postal (5 dígitos)"
+                android:inputType="number"
+                android:maxLength="5"
+                android:textColor="#333333"
+                android:minHeight="48dp" />
+
+        <Button
+                android:id="@+id/btnSolicitarViaje"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#FF7D00"
+                android:text="SOLICITAR VIAJE"
+                android:textStyle="bold"
+                android:padding="12dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/layoutEsperaPago"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <ProgressBar
+                android:id="@+id/pbEsperando"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:indeterminateTint="#FF7D00"/>
+
+        <TextView
+                android:id="@+id/tvEstadoViaje"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Buscando conductor..."
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+        <Button
+                android:id="@+id/btnPagarViaje"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="#4CAF50"
+                android:text="PAGAR VIAJE"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

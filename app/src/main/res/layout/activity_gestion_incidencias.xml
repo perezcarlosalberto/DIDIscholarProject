@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F5F5F5">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_incidencias"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:titleTextColor="@android:color/white"
+                app:navigationIcon="@android:drawable/ic_menu_revert"
+                android:elevation="4dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Detalles de la Incidencia"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="10dp"/>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp"
+                    android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                    <TextView
+                            android:id="@+id/tvIdIncidenciaSeleccionada"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nueva Incidencia"
+                            android:textColor="#666666"
+                            android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Seleccionar Viaje:"
+                            android:layout_marginTop="5dp"/>
+                    <Spinner
+                            android:id="@+id/spinnerIdViaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@android:drawable/btn_dropdown"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tipo de Incidencia:"
+                            android:layout_marginTop="10dp"/>
+                    <Spinner
+                            android:id="@+id/spinnerTipo"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@android:drawable/btn_dropdown"/>
+
+                    <EditText
+                            android:id="@+id/etDescripcion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:hint="Descripción"
+                            android:inputType="textMultiLine"
+                            android:minHeight="48dp"/>
+
+                    <EditText
+                            android:id="@+id/etFecha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:hint="Fecha (YYYY-MM-DD)"
+                            android:inputType="date"
+                            android:minHeight="48dp"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Estado:"
+                            android:layout_marginTop="10dp"/>
+                    <Spinner
+                            android:id="@+id/spinnerEstado"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@android:drawable/btn_dropdown"/>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="20dp"
+                            android:weightSum="2">
+
+                        <Button
+                                android:id="@+id/btnLimpiar"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Limpiar"
+                                android:backgroundTint="#999999"
+                                android:layout_marginEnd="5dp"/>
+
+                        <Button
+                                android:id="@+id/btnGuardar"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Registrar"
+                                android:backgroundTint="#FF7D00"
+                                android:layout_marginStart="5dp"/>
+                    </LinearLayout>
+
+                    <Button
+                            android:id="@+id/btnEliminar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Eliminar Incidencia"
+                            android:backgroundTint="#D32F2F"
+                            android:layout_marginTop="5dp"
+                            android:visibility="gone"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Historial de Incidencias"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
+
+            <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TableLayout
+                        android:id="@+id/tablaIncidencias"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:background="#FFFFFF"
+                        android:stretchColumns="*"/>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            tools:context=".Insertar_usuario">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:background="#FFFFFF">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Crear Cuenta Nueva"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333"
+                        android:gravity="center"
+                        android:layout_marginBottom="24dp"/>
+
+                <EditText
+                        android:id="@+id/etNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@android:drawable/edit_text"
+                        android:hint="Nombre(s)"
+                        android:inputType="textPersonName"
+                        android:layout_marginBottom="12dp"
+                        android:padding="12dp"/>
+
+                <EditText
+                        android:id="@+id/etApellido"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@android:drawable/edit_text"
+                        android:hint="Apellido(s)"
+                        android:inputType="textPersonName"
+                        android:layout_marginBottom="12dp"
+                        android:padding="12dp"/>
+
+                <EditText
+                        android:id="@+id/etCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@android:drawable/edit_text"
+                        android:hint="Correo (@gmail.com) o (@hotmail.com)"
+                        android:inputType="textEmailAddress"
+                        android:layout_marginBottom="12dp"
+                        android:padding="12dp"/>
+
+                <EditText
+                        android:id="@+id/etTelefono"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@android:drawable/edit_text"
+                        android:hint="Teléfono (10 dígitos)"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:layout_marginBottom="12dp"
+                        android:padding="12dp"/>
+
+                <EditText
+                        android:id="@+id/etEdad"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@android:drawable/edit_text"
+                        android:hint="Edad (18+) y (86-)"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:layout_marginBottom="12dp"
+                        android:padding="12dp"/>
+
+                <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@android:drawable/edit_text"
+                        android:hint="Contraseña (Mín. 6 caracteres)"
+                        android:inputType="textPassword"
+                        android:layout_marginBottom="12dp"
+                        android:padding="12dp"/>
+
+                <EditText
+                        android:id="@+id/etConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@android:drawable/edit_text"
+                        android:hint="Confirmar Contraseña"
+                        android:inputType="textPassword"
+                        android:layout_marginBottom="20dp"
+                        android:padding="12dp"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Selecciona tu rol:"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                <Spinner
+                        android:id="@+id/spinnerTipoUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@android:drawable/btn_dropdown"/>
+
+                <Button
+                        android:id="@+id/btnRegistrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="REGISTRARME"
+                        android:textStyle="bold"
+                        android:backgroundTint="#FF7D00"
+                        android:layout_marginBottom="12dp"/>
+
+                <Button
+                        android:id="@+id/btnregresarregistrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cancelar / Regresar"
+                        android:backgroundTint="#666666"/>
+
+        </LinearLayout>
+</ScrollView>

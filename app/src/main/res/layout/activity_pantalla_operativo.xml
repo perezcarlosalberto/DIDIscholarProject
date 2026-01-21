@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 1. El contenedor raíz ahora es un DrawerLayout -->
+<androidx.drawerlayout.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+
+    <!-- 2. El Contenido Principal (Lo que se ve al frente) -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <!-- Barra de herramientas personalizada (reemplaza la barra de acción) -->
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:elevation="4dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+        <!-- Este es el contenido de tu pantalla original -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="#F5F5F5">
+
+            <!-- Menú de Botones -->
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginBottom="10dp">
+
+                <Button
+                        android:id="@+id/btnVerPasajeros"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ver Pasajeros"
+                        android:backgroundTint="#333333"
+                        android:layout_marginEnd="5dp"/>
+
+                <Button
+                        android:id="@+id/btnVerConductores"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ver Conductores"
+                        android:backgroundTint="#FF7D00"
+                        android:layout_marginStart="5dp"/>
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/tvTituloTabla"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Seleccione una opción"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android.textColor="@color/black"
+                    android:layout_marginBottom="5dp"/>
+
+            <!-- Contenedor de la Tabla con Scroll -->
+            <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF">
+
+                <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <TableLayout
+                            android:id="@+id/tablaDatos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:stretchColumns="*">
+                        <!-- Las filas se añaden dinámicamente desde Kotlin -->
+                    </TableLayout>
+
+                </HorizontalScrollView>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 3. El Menú Lateral (El contenido del cajón) -->
+    <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header_operativo"
+            app:menu="@menu/operativo_drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

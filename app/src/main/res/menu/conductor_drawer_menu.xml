@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_inicio_conductor"
+                android:icon="@android:drawable/ic_menu_mapmode"
+                android:title="Viajes Disponibles" />
+
+        <item
+                android:id="@+id/nav_historial_conductor"
+                android:icon="@android:drawable/ic_menu_recent_history"
+                android:title="Historial y Pagos" />
+
+        <item
+                android:id="@+id/nav_agregar_vehiculo"
+                android:icon="@android:drawable/ic_menu_directions"
+                android:title="Registrar Vehículo" />
+
+        <item
+                android:id="@+id/nav_subir_documentacion"
+                android:icon="@android:drawable/ic_menu_agenda"
+                android:title="Mis Documentos" />
+    </group>
+
+    <item android:title="Cuenta">
+        <menu>
+            <item
+                    android:id="@+id/nav_cerrar_sesion"
+                    android:icon="@android:drawable/ic_menu_close_clear_cancel"
+                    android:title="Cerrar Sesión" />
+        </menu>
+    </item>
+</menu>
